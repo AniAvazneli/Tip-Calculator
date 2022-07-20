@@ -13,6 +13,7 @@ let inputBillValue = "";
 let splitAmountValue = "";
 let servantsValue = "";
 let catchedError = false;
+let activButton ;
 
 // catches bill written amount 
 billAmount.addEventListener('focusout', function () {
@@ -79,11 +80,11 @@ function reset_values() {
     document.getElementById('tipamount1').innerHTML = "0.00";
     document.getElementById('totalAmount1').innerHTML = "0.00";
     document.getElementById('servantsErrorText').style.display = "none";
+    activButton.classList.remove('active');
 }
 
 // Active buttons
 let buttons = document.querySelectorAll('.tipPerCent');
-let activButton ;
 buttons.forEach(tipPerCent => {
     tipPerCent.addEventListener('click', function (event) {
         if (activButton){
