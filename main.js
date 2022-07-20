@@ -7,6 +7,7 @@ const reset = document.getElementById('reset');
 const inputErrorAlarm = document.getElementById('servantsErrorText')
 const servantsErrorElement = document.getElementsByClassName('servantsErrorText')[0];
 
+
 // variables for calculation
 let inputBillValue = "";
 let splitAmountValue = "";
@@ -14,8 +15,8 @@ let servantsValue = "";
 let catchedError = false;
 
 // catches bill written amount 
-billAmount.addEventListener('focusout', function () { 
-    inputBillValue = billAmount.value; 
+billAmount.addEventListener('focusout', function () {
+    inputBillValue = billAmount.value;
 })
 
 // catches per cent
@@ -26,7 +27,7 @@ for (let i = 0; i < splitAmount.length; i++) {
 }
 
 // catches customed split amount
-splitAmountNumber.addEventListener('focusout', function () { 
+splitAmountNumber.addEventListener('focusout', function () {
     splitAmountValue = splitAmountNumber.value;
 })
 
@@ -34,14 +35,14 @@ splitAmountNumber.addEventListener('focusout', function () {
 // catches number of servants
 servants.addEventListener('focusout', function () {
     servantsValue = servants.value;
-    if(validate(inputBillValue, splitAmountValue, servantsValue)){
+    if (validate(inputBillValue, splitAmountValue, servantsValue)) {
         calculateTip();
-            if(catchedError){
-                servantsErrorElement.innerHTML = '';
-                servants.classList.remove('error');
-                catchedError = false;
-            }
-    }else{
+        if (catchedError) {
+            servantsErrorElement.innerHTML = '';
+            servants.classList.remove('error1');
+            catchedError = false;
+        }
+    } else {
         catchedError = true;
     }
 })
@@ -56,13 +57,13 @@ function calculateTip() {
 }
 
 // function to catch if every element is valid if not shows error
-function validate(inputBillValue, splitAmountValue, servantsValue){
-    if (inputBillValue == '' || inputBillValue <= '0' || splitAmountValue == '' || servantsValue == '')
+function validate(inputBillValue, splitAmountValue, servantsValue) {
+    if (inputBillValue == '' || inputBillValue <= 0 || splitAmountValue == '' || servantsValue == '')
         return false;
-    if ( servantsValue <= '0'){
-        servants.classList.add('error');
-        servantsErrorElement.innerHTML = 'can\'t be zero';
-       return false
+    else if (servantsValue <= 0 ) {
+        inputErrorAlarm.classList.add('error1');
+        inputErrorAlarm.innerHTML = 'can\'t be zero';
+        return false
     }
     return true
 }
@@ -77,9 +78,31 @@ function reset_values() {
     servants.value = 0;
     document.getElementById('tipamount1').innerHTML = "0.00";
     document.getElementById('totalAmount1').innerHTML = "0.00";
+    document.getElementById('servantsErrorText').style.display = "none";
 }
 
-
+// Active buttons
+let buttons = document.querySelectorAll('.tipPerCent');
+let activButton ;
+buttons.forEach(tipPerCent => {
+    tipPerCent.addEventListener('click', function (event) {
+        if (activButton){
+            activButton.classList.remove('active');
+        }
+        event.target.classList.add('active');
+        activButton = event.target;  
+        if (validate(inputBillValue, splitAmountValue, servantsValue)) {
+            calculateTip();
+            if (catchedError) {
+                servantsErrorElement.innerHTML = '';
+                servants.classList.remove('error1');
+                catchedError = false;
+            }
+        } else {
+            catchedError = true;
+        }     
+    });
+});
 
 
 
