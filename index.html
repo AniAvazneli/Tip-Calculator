@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link
+        rel="icon"
+        type="icon"
+        href="./images/favicon-32x32.png"
+    />
+    <title>Splitter</title>
+</head>
+<header> 
+    <img class="headerImg" src="./images/logo.svg" alt="image where is written: splitter"/>
+ </header>
+
+<body>
+    <main>
+        <section class="filler">
+            <label for="billAmount">Bill</label>
+            <div class="labelsConteiner">
+                <input min="1" type="number" id="billAmount" >
+            </div>
+            <div class="selectTip">
+                <label for="tipPerCent" >Select Tip %</label for="">
+                <div class="perCentButtons">   
+                    <button class="tipPerCent" value= '10' >5%</button>   
+                    <button class="tipPerCent" value= '10' >10%</button>
+                    <button class="tipPerCent" value='15' >15%</button>
+                    <button class="tipPerCent" value='20'>25%</button>
+                    <button class="tipPerCent" value='25' >50%</button>
+                    <input min="1" type="number" id="tipAmountNumber" placeholder="custom">
+                </div>
+            </div>
+            <br>
+            <div class="sevarntsContainer">
+                <div class="ServantTexts">
+                    <label for="servants">Number of People</label>
+                    <h4 class="servantsErrorText" id="servantsErrorText"></h4>
+                </div>
+                <input min="0" type="number" id = 'servants'  placeholder="0">
+            </div>
+            
+        </section>
+
+        <section class="filled">
+            <div class="beforeReset">
+                <div class="resultText">
+                    <div class="rerPerson">
+                        <h3 class="heads">Tip Amount</h3>
+                        <h5 class="persons">/ person</h5>
+                    </div>
+                    <div class="totol">
+                        <h3 class="heads">Total</h3>
+                        <h5 class="persons">/ person</h5>
+                    </div>
+                </div>
+                <div class="result" id="result">
+                    <div id = "tipAmount"> 
+                        <img class="dollarSimbols" src="/images/icon-dollar.svg" alt="icon-dollar"/>
+                        <span class="resultNumbers" id="tipamount1">0.00</span>
+                    </div>
+                    <div id="total"> 
+                        <img class="dollarSimbols" src="/images/icon-dollar.svg" alt="icon-dollar"/>
+                        <span class="resultNumbers" id="totalAmount1">0.00</span>
+                    </div>
+                </div>
+            </div>
+            <button id="reset" >RESET</button>
+        </section>
+
+    <script src="/main.js"></script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+* {
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100vw;
+      overflow-x: hidden;
+      font-family: 'Space Mono';
+      font-style: normal;
+      font-weight: 700;
+      background: #C5E4E7;
+    }
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.headerImg{
+    margin-top: 50px;
+    margin-bottom: 40.86px;
+    width: 86.66px;
+    height: 53.14px;
+}
+main{
+    width: 375px;
+    background: #FFFFFF;
+    border-radius: 25px 25px 0px 0px;
+}
+.filler label{
+    font-size: 16px;
+    line-height: 24px;
+    color: #5E7A7D;
+    margin-bottom: 6px;
+}
+.filler{
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-bottom: 32px;
+}
+#billAmount{
+    background-image: url(./images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: 5%;
+    padding-left: 187.12px;
+    height: 48px;
+    width: 100%;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #F3F9FA;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: right;
+    color: #00474B;
+    padding-right: 17.48px;
+    cursor: pointer;
+}
+.labelsConteiner:hover{
+    border: 2px solid #26C2AE;
+    border-radius: 5px;
+}
+
+.selectTip{
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+}
+.perCentButtons{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 16.56px;
+    row-gap: 16px;
+    width: 100%;
+}
+.tipPerCent{
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #00474B;
+    border-radius: 5px;
+    border: 0px;
+    height: 48px;
+    width: 147px;
+    cursor: pointer;
+}
+.tipPerCent:hover{
+    background: #9FE8DF;
+}
+#tipAmountNumber{
+    border-radius: 5px;
+    border: 0px;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: right;
+    color: #547878;
+    background: #F3F9FA;
+    width: 147px;
+    padding-right: 17.33px;
+}
+#tipAmountNumber:hover{
+    border: 2px solid #26C2AE;
+}
+
+.error{
+    position: absolute;
+    transform: translate(143%,-102%);
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    color: #E17457;
+    display: none;
+}
+#servants{
+    background-image: url(./images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: 5%;
+    padding-left: 187.12px;
+    height: 48px;
+    width: 100%;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #F3F9FA;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: right;
+    color: #00474B;
+    padding-right: 17.48px;
+    margin-top: 6px;
+}
+.filled{
+    width: 327px;
+    height: 257px;
+    background: #00474B;
+    border-radius: 15px;
+    padding-left: 24px;
+    padding-right: 22px;
+    padding-bottom: 24px;
+    margin-left: 24px;
+    margin-right: 22px;
+    margin-bottom: 32px;
+}
+.beforeReset{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 33px;
+}
+.resultText{
+    margin-top: 39px;
+}
+.rerPerson{
+    margin-bottom: 25px;
+}
+.heads{
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.persons{
+    font-size: 13px;
+    line-height: 19px;
+    color: #7F9D9F;
+}
+.result{
+    margin-top: 37px;
+}
+#tipAmount{
+    margin-bottom: 21px;
+}
+.dollarSimbols{
+    height: 22px;
+}
+.resultNumbers{
+    font-size: 32px;
+    line-height: 47px;
+    text-align: right;
+    letter-spacing: -0.666667px;
+    color: #26C2AE;
+}
+#reset{
+    background: #0D686D;
+    border-radius: 5px;
+    height: 48px;
+    width: 281px;
+    border-radius: 5px;
+    border: 0px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #00474B;
+    cursor: pointer;
+}
+#reset:hover{
+    background: #9FE8DF;
+}
+@media screen and (min-width: 1440px){
+    .headerImg{
+        margin-top: 163px;
+        margin-bottom: 87.86px;
+    }
+    main{
+        border-radius: 25px 25px 25px 25px;
+        width: 920px;
+        height: 481px;
+        display: flex;
+        flex-direction: row;
+    }
+    .filler{
+        margin-top: 45px;
+        margin-left: 48px;
+        margin-right: 48px;
+        margin-bottom: 48px;
+    }
+    .perCentButtons{
+        grid-template-columns: auto auto auto;
+        column-gap: 14px;
+        width: 100%;
+    }
+    .tipPerCent{
+        width: 117px;
+    }
+    #tipAmountNumber{
+        width: 117px;
+    }
+    .ServantTexts{
+        margin-top: 30px;
+    }
+    .filled{
+        height: 417px;
+        width: 413px;
+        margin-left: 0px;
+        margin-top: 32px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+    }
+    .resultText{
+        margin-top: 56px;
+    }
+    .rerPerson{
+        margin-bottom: 53px;
+    }
+    .result{
+        margin-top: 45px;
+    }
+    .dollarSimbols{
+        height: 35px;
+    }
+    .resultNumbers{
+        font-size: 48px;
+        line-height: 65px;
+    }
+    #reset{
+        height: 48px;
+        width: 333px;
+        margin-top: 85px;
+    }
+    #tipAmount{
+        margin-bottom: 33px;
+    }
+}
